@@ -1,6 +1,6 @@
 
 ### Builder
-target/
+**/target/
 build/
 out/
 gen/
@@ -8,8 +8,8 @@ gen/
 local.properties
 
 ### IntelliJ
-.idea/
-*.iml
+**/.idea/
+**/*.iml
 *.ipr
 *.iws
 

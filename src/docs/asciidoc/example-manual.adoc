@@ -1,11 +1,19 @@
 = Example Manual
 Doc Writer <doc.writer@example.org>
 v1.0, 2014-09-09
+:toc:
+:toclevels: 3
+:sectnums: 3
+:sectnumlevels: 3
+:icons: font
+:source-highlighter: rouge
 :example-caption!:
 ifndef::imagesdir[:imagesdir: images]
 ifndef::sourcedir[:sourcedir: ../../main/java]
 
 This is a user manual for an example project.
+
+<<<
 
 == Introduction
 
@@ -25,10 +33,14 @@ This page was built by the following command:
 
  $ mvn
 
+<<<
+
 == Images
 
 [.thumb]
 image::sunset.jpg[scaledwidth=75%]
+
+<<<
 
 == Attributes
 
@@ -42,6 +54,8 @@ imagesdir:: {imagesdir}
 .Custom
 sourcedir:: {sourcedir}
 
+<<<
+
 == Includes
 
 .include::subdir/_b.adoc[]
@@ -50,6 +64,8 @@ include::subdir/_b.adoc[]
 ====
 
 WARNING: Includes can be tricky!
+
+<<<
 
 == Source Code and Syntax Highlighting
 

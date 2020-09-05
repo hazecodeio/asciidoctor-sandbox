@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.hsmak</groupId>
     <artifactId>asciidoctor-sandbox</artifactId>
     <version>1.0-SNAPSHOT</version>
     <!--<packaging>jar</packaging>-->
     <name>AsciidoctorSandBox</name>
+    <description>An example project that demonstrates how to convert AsciiDoc to PDF using Asciidoctor PDF with the
+        Asciidoctor Maven plugin.
+    </description>
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <asciidoctor.maven.plugin.version>1.5.7.1</asciidoctor.maven.plugin.version>
-        <asciidoctorj.pdf.version>1.5.0-alpha.16</asciidoctorj.pdf.version>
-        <asciidoctorj.version>1.5.7</asciidoctorj.version>
-        <jruby.version>9.1.17.0</jruby.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <asciidoctor.maven.plugin.version>2.0.0</asciidoctor.maven.plugin.version>
+        <asciidoctorj.pdf.version>1.5.3</asciidoctorj.pdf.version>
+        <asciidoctorj.version>2.4.0</asciidoctorj.version>
+        <jruby.version>9.2.13.0</jruby.version>
     </properties>
 
+    <!--
+        ToDo: Create a maven profile to generate HTML5
+    -->
     <build>
         <defaultGoal>process-resources</defaultGoal>
         <plugins>
@@ -68,8 +74,10 @@
                                                      https://github.com/asciidoctor/asciidoctorj-pdf/issues/3
                                                      https://github.com/jneen/rouge/issues/661
                             -->
-                            <sourceHighlighter>coderay</sourceHighlighter>
                             <attributes>
+                                <!--<source-highlighter>coderay</source-highlighter>--> <!-- coderay didn't highlight Scala code -->
+                                <source-highlighter>rouge
+                                </source-highlighter> <!-- rouge works just fine with Scala and others-->
                                 <icons>font</icons>
                                 <pagenums/>
                                 <toc/>
@@ -82,5 +90,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
